@@ -55,6 +55,7 @@ FD.add({
         <h3>How to use this website on your own</h3>
         ${FD.HOWTO}
       </section>
+      <p class="small muted">Want to repeat the lesson from zero? <button class="link-btn danger" id="sReset">↺ Reset my progress</button></p>
       <p class="small muted">Your progress is saved in this browser only. Nothing is sent to the internet. Every ransom note, website, message and person here is a made-up, harmless simulation: nothing on this page can damage your computer. Never type real passwords into this website.</p>
       <p class="small muted">Based on Teach Computing Curriculum, Year 9 Cybersecurity, Lesson 4 “Rise of the bots” (National Centre for Computing Education, ncce.io/tcc), licensed under the Open Government Licence v3.0. Adapted and animated for the British School Alzira · Xàtiva · Gandia Group.</p>`;
     const $ = (s) => el.querySelector(s);
@@ -65,6 +66,7 @@ FD.add({
       else FD.goto('hook');
     });
     $('#sProg').addEventListener('click', FD.openProgress);
+    $('#sReset').addEventListener('click', () => FD.openProgress('reset'));
     el.querySelectorAll('[data-go]').forEach((b) => b.addEventListener('click', () => FD.goto(b.dataset.go)));
   },
 });
